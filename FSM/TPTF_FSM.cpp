@@ -1,7 +1,7 @@
 #include "FSM_Simulation.h"
 #include "TPTF_Events.h"
 
-void TPTFSimulationFSM :: dispatch(GenericEvent& ev)
+void TPTF_FSM :: dispatch(GenericEvent& ev)
 {
 	GenericState * newState = NULL;
 	

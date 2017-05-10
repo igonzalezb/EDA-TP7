@@ -15,11 +15,11 @@ lo que se les indique cuando se llame a sus constructores.
 using namespace std;
 
 
-class TPTFSimulationFSM : public GenericFSM
+class TPTF_FSM : public GenericFSM
 {
 public:
-	TPTFSimulationFSM() : GenericFSM() {;};
-	TPTFSimulationFSM(GenericState * initState) : GenericFSM(initState) {;};
+	TPTF_FSM() : GenericFSM() {;};
+	TPTF_FSM(GenericState * initState) : GenericFSM(initState) {;};
 	virtual void dispatch(GenericEvent& ev);
 };
 

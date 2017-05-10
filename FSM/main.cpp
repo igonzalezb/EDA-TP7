@@ -37,7 +37,7 @@ int main(void)
 	string lastEvent;
 
 #if I_AM == CLIENT	
-	TPTFSimulationFSM fsm;
+	TPTF_FSM fsm;
 	
 	switch (key) { //inicializar la FSM con el estado que corresponda segun lo recibido
 		case 'r':
@@ -51,7 +51,7 @@ int main(void)
 		break;
 	}	
 #else
-	TPTFSimulationFSM fsm(new Idle());
+	TPTF_FSM fsm(new Idle());
 #endif
 	do {
 		delete newEv;

@@ -11,9 +11,6 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="FSM_Simulation.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="GenericState.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -26,11 +23,11 @@
     <ClCompile Include="ClientStates.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="TPTF_FSM.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="FSM_Simulation.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="GenericEvent.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -47,6 +44,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="ClientStates.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="TPTF_FSM.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

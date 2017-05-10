@@ -144,14 +144,14 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="ClientStates.cpp" />
-    <ClCompile Include="FSM_Simulation.cpp" />
+    <ClCompile Include="TPTF_FSM.cpp" />
     <ClCompile Include="GenericState.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="ServerStates.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ClientStates.h" />
-    <ClInclude Include="FSM_Simulation.h" />
+    <ClInclude Include="TPTF_FSM.h" />
     <ClInclude Include="GenericEvent.h" />
     <ClInclude Include="GenericFSM.h" />
     <ClInclude Include="GenericState.h" />
