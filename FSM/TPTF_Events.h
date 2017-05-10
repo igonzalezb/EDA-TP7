@@ -14,7 +14,7 @@
 
 #define I_AM	SERVER
 
-#include "FSM_Simulation.h"
+#include "TPTF_FSM.h"
 
 
 using namespace std;

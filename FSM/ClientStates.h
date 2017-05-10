@@ -10,7 +10,7 @@
 
 #include "GenericState.h"
 #include "GenericEvent.h"
-#include "FSM_Simulation.h"
+#include "TPTF_FSM.h"
 
 
 using namespace std;

@@ -6,12 +6,11 @@ que indique la constante I_AM, definida en el archivo "TFTP_Events.h".
 
 */
 
-
+#include <iostream>
+#include <cstdio>
 #include "TPTF_Events.h"
-#include "FSM_Simulation.h"
-#include <cctype>
-#include <thread>
-#include <chrono>
+#include "TPTF_FSM.h"
+
 
 #if I_AM == CLIENT
 #include "ClientStates.h"
