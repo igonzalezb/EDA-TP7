@@ -7,11 +7,11 @@ DataPacket::DataPacket(std::string name, bool isReadMode)
 	
 	if(isReadMode)
 	{
-		archivo->open(name, std::fstream::in);
+		archivo->open(name, std::fstream::in | std::fstream::binary);
 	}
 	else
 	{
-		archivo->open(name, std::fstream::out);
+		archivo->open(name, std::fstream::out | std::fstream::binary);
 	}
 
 }
