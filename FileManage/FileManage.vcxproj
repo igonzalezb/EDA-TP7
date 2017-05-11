@@ -143,9 +143,11 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="FileManager.cpp" />
+    <ClCompile Include="PackageMaker.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="FileManager.h" />
+    <ClInclude Include="PackageMaker.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
