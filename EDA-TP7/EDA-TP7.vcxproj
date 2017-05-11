@@ -146,6 +146,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="cliente.cpp" />
+    <ClCompile Include="ClientStates.cpp" />
     <ClCompile Include="evNetworking.cpp" />
     <ClCompile Include="GenericEvent.cpp" />
     <ClCompile Include="GenericState.cpp" />
@@ -158,6 +159,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="cliente.h" />
+    <ClInclude Include="ClientStates.h" />
     <ClInclude Include="evNetworking.h" />
     <ClInclude Include="GenericEvent.h" />
     <ClInclude Include="GenericFSM.h" />
