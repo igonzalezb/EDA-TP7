@@ -23,7 +23,7 @@ using namespace std;
 #if I_AM == CLIENT
 enum eventos{ACK, LAST_ACK, DATA, LAST_DATA, TIMEOUT, ERROR, EXIT};
 #else
-enum eventos{ACK, LAST_ACK, DATA, LAST_DATA, TIMEOUT, ERROR, EXIT, RRQ, WRQ};
+enum eventos{ACK, LAST_ACK, DATA, LAST_DATA, TIMEOUT, _ERROR, EXIT, RRQ, WRQ};
 
 class Rrq: public GenericEvent	//READ REQUEST
 {

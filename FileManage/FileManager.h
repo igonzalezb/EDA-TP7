@@ -6,13 +6,16 @@
 class DataPacket
 {
 public:
+
 	DataPacket(std::string name, bool isReadMode);
 	~DataPacket();
 
-	//void makeDataPacket(char* a, int size);
-	//void createFrom;
+	void ReadDATA();
 
 private:
+
+	int BytesRead; //cantidad de bytes leidos
 	std::fstream* archivo;
 	bool isReadMode;
+	char* ArrayOfReadDATA;
 };

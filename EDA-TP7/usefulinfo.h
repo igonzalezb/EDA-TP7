@@ -6,8 +6,8 @@ class usefulInfo
 public:
 	usefulInfo();
 	~usefulInfo();
-
-private:
 	boost::circular_buffer <GenericEvent *> buff;
+private:
+	
 };
 

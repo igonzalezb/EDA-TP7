@@ -25,7 +25,9 @@ bool PackageMaker::makeDATA (char* Package, char* data, unsigned int sizeData, u
 bool PackageMaker::decodeDATA(char* DATA,char* DATApackage, unsigned int sizeDATApackage, unsigned int& sizeDATA)
 {
 
-	for (int i = 4, j = 0; i < sizeDATApackage; j++, i++)
+	int j,i;
+
+	for (i = 4, j = 0; i < sizeDATApackage; j++, i++)
 	{
 		DATA[j] = DATApackage[i];
 	}

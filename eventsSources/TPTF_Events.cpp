@@ -105,7 +105,7 @@ char * LastAck::getPackage(int * sizePackage)
 	return Package;
 }
 
-Error::Error(int size) : GenericEvent(ERROR)
+Error::Error(int size) : GenericEvent(_ERROR)
 {
 	this->size = size;
 	Package = new char[this->size];
