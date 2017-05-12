@@ -12,8 +12,8 @@ public:
 	~cliente();
 	void ConectToServer(const char* ipServer="localhost", const char* portNumber="12345");
 	bool sendData(char * dataToSend_t, unsigned int sizeData);
-	size_t receiveDataForServidor(char * buffer_t, int bufferSize);
-	size_t nonBlockinReceiveDataForServer(char * buffer_t, int bufferSize);
+	int receiveDataForServidor(char * buffer_t, int bufferSize);
+	int nonBlockinReceiveDataForServer(char * buffer_t, int bufferSize);
 private:
 	boost::asio::ip::tcp::resolver* clienteResolver;
 	boost::asio::ip::tcp::socket* clienteSocket;

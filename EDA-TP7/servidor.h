@@ -15,8 +15,8 @@ public:
 	servidor(UINT32 port=12345);
 	~servidor();
 	void waitForCliente();
-	size_t receiveDataForCliente(char * buffer_t, int bufferSize);
-	size_t nonBlockinReceiveDataForCliente(char * buffer_t, int bufferSize);
+	int receiveDataForCliente(char * buffer_t, int bufferSize);
+	int nonBlockinReceiveDataForCliente(char * buffer_t, int bufferSize);
 	bool sendData(char * dataToSend_t, unsigned int sizeData);
 private:
 	UINT32 portNumber;

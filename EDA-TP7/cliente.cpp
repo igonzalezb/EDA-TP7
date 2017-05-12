@@ -69,9 +69,9 @@ bool cliente::sendData(char * dataToSend_t, unsigned int sizeData)
 //con la cantidad de elementos de dicho arreglo.
 //si se puedo recivir toda la informacion devuelve un true, caso contrario
 //devuelve un false.
-size_t cliente::receiveDataForServidor(char * buffer_t, int bufferSize)
+int cliente::receiveDataForServidor(char * buffer_t, int bufferSize)
 {
-	size_t longitudDelMensaje = 0;
+	int longitudDelMensaje = 0;
 	boost::system::error_code error;
 	char bufferTemp[900];
 
@@ -85,7 +85,7 @@ size_t cliente::receiveDataForServidor(char * buffer_t, int bufferSize)
 		longitudDelMensaje = MY_ERROR;
 	}else if (longitudDelMensaje <= bufferSize)//evaluo si entra en lo que me mandaron
 	{
-		for (size_t i = 0; i < longitudDelMensaje; i++)
+		for (int i = 0; i < longitudDelMensaje; i++)
 		{
 			buffer_t[i] = bufferTemp[i];
 		}
@@ -107,10 +107,10 @@ size_t cliente::receiveDataForServidor(char * buffer_t, int bufferSize)
 //con la cantidad de elementos de dicho arreglo.
 //devuelve: true, si se recivio algo. false, si no se recivio nada
 //nota: NO ES BLOQUEANTE!!!!!!!!!!!!!!!!!!!!!!!!
-size_t cliente::nonBlockinReceiveDataForServer(char * buffer_t, int bufferSize)
+int cliente::nonBlockinReceiveDataForServer(char * buffer_t, int bufferSize)
 {
 
-	size_t longitudDelMensaje = 0;
+	int longitudDelMensaje = 0;
 	boost::system::error_code error;
 	char bufferTemp[900];
 
@@ -128,7 +128,7 @@ size_t cliente::nonBlockinReceiveDataForServer(char * buffer_t, int bufferSize)
 	{
 		if (longitudDelMensaje <= bufferSize)//evaluo si entra en lo que me mandaron
 		{
-			for (size_t i = 0; i < longitudDelMensaje; i++)
+			for (int i = 0; i < longitudDelMensaje; i++)
 			{
 				buffer_t[i] = bufferTemp[i];
 			}

@@ -4,7 +4,7 @@
 
 void copyCharAtoB(char * a, char * b, int size)
 {
-	for (size_t i = 0; i < size; i++)
+	for (int i = 0; i < size; i++)
 	{
 		b[i] = a[i];
 	}

@@ -26,7 +26,7 @@ void TPTF_FSM :: dispatch(GenericEvent& ev)
 			newState = currentState->onTimeout(&ev);
 		break;
 				
-		case ERROR:
+		case _ERROR:
 			newState = currentState->onError(&ev);
 		break;
 
