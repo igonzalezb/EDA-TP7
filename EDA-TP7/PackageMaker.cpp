@@ -10,7 +10,7 @@ bool PackageMaker::makeDATA (char* Package, char* data, unsigned int sizeData, u
 	Package[3] = (BlockNumber & 0x00ff);
 
 
-	for (int i = 4,j=0; j <= sizeData; j++,i++)
+	for (unsigned int i = 4,j=0; j <= sizeData; j++,i++)
 	{
 		Package[i] = data[j];
 	}
@@ -24,10 +24,9 @@ bool PackageMaker::makeDATA (char* Package, char* data, unsigned int sizeData, u
 
 bool PackageMaker::decodeDATA(char* DATA,char* DATApackage, unsigned int sizeDATApackage, unsigned int& sizeDATA)
 {
+	int j = 0;
 
-	int j,i;
-
-	for (i = 4, j = 0; i < sizeDATApackage; j++, i++)
+	for (unsigned int i = 4; i < sizeDATApackage; j++, i++)
 	{
 		DATA[j] = DATApackage[i];
 	}
