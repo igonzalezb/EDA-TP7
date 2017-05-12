@@ -147,10 +147,13 @@
   <ItemGroup>
     <ClCompile Include="cliente.cpp" />
     <ClCompile Include="ClientStates.cpp" />
+    <ClCompile Include="eventGenerator.cpp" />
     <ClCompile Include="evNetworking.cpp" />
+    <ClCompile Include="FileManager.cpp" />
     <ClCompile Include="GenericEvent.cpp" />
     <ClCompile Include="GenericState.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="PackageMaker.cpp" />
     <ClCompile Include="ServerStates.cpp" />
     <ClCompile Include="servidor.cpp" />
     <ClCompile Include="TPTF_Events.cpp" />
@@ -160,10 +163,13 @@
   <ItemGroup>
     <ClInclude Include="cliente.h" />
     <ClInclude Include="ClientStates.h" />
+    <ClInclude Include="eventGenerator.h" />
     <ClInclude Include="evNetworking.h" />
+    <ClInclude Include="FileManager.h" />
     <ClInclude Include="GenericEvent.h" />
     <ClInclude Include="GenericFSM.h" />
     <ClInclude Include="GenericState.h" />
+    <ClInclude Include="PackageMaker.h" />
     <ClInclude Include="ServerStates.h" />
     <ClInclude Include="servidor.h" />
     <ClInclude Include="TPTF_Events.h" />
