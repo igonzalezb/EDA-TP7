@@ -17,6 +17,7 @@ public:
 	GenericEvent(int type);
 
 	uint32_t getType();
+	void * UInfo;
 	
 protected:
 

@@ -6,7 +6,7 @@
 #define PackageSize 600
 #define MaxSizeDATA 512
 
-enum typePacket { _RRQ_ = 1, _WRQ_, _DATA_, _ACK_, _ERROR_,_LASTDATA_};
+enum typePacket { _RRQ_ = 1, _WRQ_, _DATA_, _ACK_, _ERROR_, _LASTDATA_ };
 
 class PackageMaker
 {
@@ -48,9 +48,10 @@ public:
 	typePacket getTypePackage(char* Package, unsigned int sizePackage);
 
 
+	
 	//le mandas el Paquete DATA completo y te devuelve un puntero al ArregloDATA y ademas
 	//en sizeDATA devuelve la cantidad de bytes
-	bool decodeDATA(char* DATA, char* DATApackage, unsigned int sizeDATApackage, unsigned int& sizeDATA); 
+	bool decodeDATA(char* DATA, char* DATApackage, unsigned int sizeDATApackage, unsigned int& sizeDATA);
 
 
 private:

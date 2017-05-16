@@ -10,8 +10,12 @@ que indique la constante I_AM, definida en el archivo "TFTP_Events.h".
 #include <cstdio>
 #include "TPTF_Events.h"
 #include "TPTF_FSM.h"
-
-
+#include "usefulinfo.h"
+#include "evNetworking.h"
+#include "servidor.h"
+#include "cliente.h"
+#include "eventGenerator.h"
+#include "FileManager.h"
 #if I_AM == CLIENT
 #include "ClientStates.h"
 
@@ -27,97 +31,91 @@ que indique la constante I_AM, definida en el archivo "TFTP_Events.h".
 
 using namespace std;
 
-GenericEvent * eventGenerator();
 
 
-int main(void) 
+
+int main(int argc, char *argv[])
 {
 	GenericEvent * newEv = NULL;
 	string lastEvent;
+	TPTF_FSM * fsm;
+
 
 #if I_AM == CLIENT	
-	TPTF_FSM fsm;
-	
-	switch (key) { //inicializar la FSM con el estado que corresponda segun lo recibido
-		case 'r':
-			printf("Estado: Reading");
-			fsm.setState(new Reading());
-		break;
+	char buff[600];
+	char comando[600];
+	char path[700];
+	unsigned int sizePackage = 0;
 
-		case 'w':
-			printf("Estado: Writing");
-			fsm.setState(new Writing());
-		break;
-	}	
+	
+	cliente Client;
+	
+	if (argc != 2)//si no hay exactamente dos argumentos, entonces cierro el programa
+	{
+		exit (4);
+	}
+	Client.ConectToServer(argv[1], "69");
+	evNetworking Net(&Client);
+	usefulInfo Info(&Net);
+	//inicializo el sistema de archivos
+	do
+	{
+		scanf("%s", comando);//espero a que se ingrese wrq o rrq
+		scanf("%s", path);//espero que se ingrese el path del archivo
+		for (int i = 0; i < strlen(comando); i++)//paso el comando amayusculas
+			comando[i] = toupper(comando[i]);
+	} while (strcmp(comando, "PUT")|| strcmp(comando, "GET"));
+	
+	if (!strcmp(comando, "PUT"))
+	{
+		//abro archivo en modo LECTURA
+		Info.File = new DataPacket(path, true);
+		//armo el paquete WRQ
+		Info.makerDecoder.makeWRQ(buff, path, sizePackage);
+		fsm = new TPTF_FSM(new Writing);
+	}
+	else
+	{
+		//abro archivo en modo escritura
+		Info.File = new DataPacket(path, false);
+		//armo el paquete RRQ
+		Info.makerDecoder.makeRRQ(buff, path, sizePackage);
+		fsm = new TPTF_FSM(new Reading);
+	}
+
+	
+	//envio el paquete al servidor
+	Info.Net->SendData(buff, sizePackage);
+	eventGenerator Eg(&Info);
 #else
-	TPTF_FSM fsm(new Idle());
+	servidor Server(69);
+	Server.waitForCliente();
+	evNetworking Net(&Server);
+	usefulInfo Info(&Net);
+	eventGenerator Eg(&Info);
+	fsm = new TPTF_FSM(new Idle);
 #endif
+	
 	do {
 		delete newEv;
-		newEv = eventGenerator();	//recibir input del teclado
+		Eg.generateEvents();
+		newEv = Eg.getEvents();	//recibir input del buffer
 
 		if (newEv != NULL) //si se recibio algo, mostrarlo y llamar al dispatcher
 		{ 
-			fsm.dispatch(*newEv);
+			fsm->dispatch(*newEv);
 		}
 	}
 #if I_AM == CLIENT //condiciones para salir del loop en cliente
-	while (newEv == NULL || (newEv->getType() != EXIT && newEv->getType()!= ERROR && 
-		((newEv->getType()!=LAST_DATA || key == 'w') && (newEv->getType()!=LAST_ACK || key == 'r'))) );
+	while (newEv == NULL || (newEv->getType() != EXIT && newEv->getType()!= _ERROR && 
+		((newEv->getType()!=LAST_DATA ) && (newEv->getType()!=LAST_ACK ))) );
 #else //en server: solo si se aprieta EXIT
 	while (newEv == NULL || newEv->getType() != EXIT);
 #endif
 	delete newEv;
-		
+	delete fsm;
+	Net.~evNetworking();
 	return EXIT_SUCCESS;
 }
 
 
-GenericEvent * eventGenerator()
-{
-//	GenericEvent * ev = NULL;
-//
-//	int key = getch();
-//	
-//	switch(tolower(key)){
-//		case ACK_K:
-//			ev = new Ack(ACTION_X,ACTION_Y); 
-//			break;
-//
-//		case LAST_ACK_K:
-//			ev = new LastAck(ACTION_X,ACTION_Y); 
-//			break;
-//
-//		case DATA_K: 
-//			ev = new Data(ACTION_X,ACTION_Y); 
-//			break;
-//
-//		case LAST_DATA_K: 
-//			ev = new LastData(ACTION_X,ACTION_Y); 
-//			break;
-//
-//		case TIMEOUT_K: 
-//			ev = new Timeout(ACTION_X,ACTION_Y); 
-//			break;
-//
-//		case ERROR_K: 
-//			ev = new Error(ACTION_X,ACTION_Y); 
-//			break;
-//
-//		case EXIT_K: 
-//			ev = new Exit(ACTION_X,ACTION_Y); 
-//			break;
-//#if I_AM == SERVER
-//		case RRQ_K:
-//			ev = new Rrq(ACTION_X,ACTION_Y);
-//			break;
-//
-//		case WRQ_K:
-//			ev = new Wrq(ACTION_X,ACTION_Y);
-//			break;
-//#endif // I_AM == SERVER
-//	}
-//
-//	return ev;
-	return NULL;
-}

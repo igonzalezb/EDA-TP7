@@ -56,6 +56,7 @@ GenericEvent * evNetworking::hayEvento()
 
 		switch (pM.getTypePackage(tempBuff, dataRecive))
 		{
+#if I_AM == SERVER
 		case _RRQ_:
 			ev = new Rrq(dataRecive);
 			copyCharAtoB(tempBuff, ((Rrq *)ev)->getPackage(&tempCounter),dataRecive);
@@ -64,6 +65,7 @@ GenericEvent * evNetworking::hayEvento()
 			ev = new Wrq(dataRecive);
 			copyCharAtoB(tempBuff, ((Wrq *)ev)->getPackage(&tempCounter), dataRecive);
 			break;
+#endif
 		case _DATA_:
 			ev = new Data(dataRecive);
 			copyCharAtoB(tempBuff, ((Data *)ev)->getPackage(&tempCounter), dataRecive);

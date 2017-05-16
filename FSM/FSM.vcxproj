@@ -165,7 +165,6 @@
   <ImportGroup Label="ExtensionTargets">
     <Import Project="..\..\..\Packages\pdcurses_vc120.3.4.0.3\build\native\pdcurses_vc120.targets" Condition="Exists('..\..\..\Packages\pdcurses_vc120.3.4.0.3\build\native\pdcurses_vc120.targets')" />
     <Import Project="..\..\..\Packages\PDCurses34.redist.3.4.0.1\build\native\PDCurses34.redist.targets" Condition="Exists('..\..\..\Packages\PDCurses34.redist.3.4.0.1\build\native\PDCurses34.redist.targets')" />
-    <Import Project="..\..\..\Packages\PDCurses34.3.4.0.1\build\native\PDCurses34.targets" Condition="Exists('..\..\..\Packages\PDCurses34.3.4.0.1\build\native\PDCurses34.targets')" />
   </ImportGroup>
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
@@ -173,6 +172,5 @@
     </PropertyGroup>
     <Error Condition="!Exists('..\..\..\Packages\pdcurses_vc120.3.4.0.3\build\native\pdcurses_vc120.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\..\Packages\pdcurses_vc120.3.4.0.3\build\native\pdcurses_vc120.targets'))" />
     <Error Condition="!Exists('..\..\..\Packages\PDCurses34.redist.3.4.0.1\build\native\PDCurses34.redist.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\..\Packages\PDCurses34.redist.3.4.0.1\build\native\PDCurses34.redist.targets'))" />
-    <Error Condition="!Exists('..\..\..\Packages\PDCurses34.3.4.0.1\build\native\PDCurses34.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\..\Packages\PDCurses34.3.4.0.1\build\native\PDCurses34.targets'))" />
   </Target>
 </Project>

@@ -44,9 +44,6 @@
     <ClCompile Include="usefulinfo.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="ClientStates.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="eventGenerator.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -54,6 +51,12 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="PackageMaker.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="evKeyboard.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="timeOut.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -88,9 +91,6 @@
     <ClInclude Include="usefulinfo.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="ClientStates.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="eventGenerator.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -98,6 +98,12 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="PackageMaker.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="evKeyboard.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="timeOut.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

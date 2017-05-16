@@ -21,7 +21,7 @@ using namespace std;
 
 
 #if I_AM == CLIENT
-enum eventos{ACK, LAST_ACK, DATA, LAST_DATA, TIMEOUT, ERROR, EXIT};
+enum eventos{ACK, LAST_ACK, DATA, LAST_DATA, TIMEOUT, _ERROR, EXIT};
 #else
 enum eventos{ACK, LAST_ACK, DATA, LAST_DATA, TIMEOUT, _ERROR, EXIT, RRQ, WRQ};
 
@@ -31,7 +31,7 @@ public:
 	Rrq(int size);
 	~Rrq();
 	char * getPackage(int * sizePackage);
-	usefulInfo * I;
+	
 private:
 	char * Package;
 	int size;
@@ -45,7 +45,7 @@ public:
 	Wrq(int size);
 	~Wrq();
 	char * getPackage(int * sizePackage);
-	usefulInfo * I;
+	
 private:
 	char * Package;
 	int size;
@@ -59,7 +59,7 @@ public:
 	Data(int size);
 	~Data();
 	char * getPackage(int * sizePackage);
-	usefulInfo * I;
+	
 private:
 	char * Package;
 	int size;
@@ -71,7 +71,7 @@ public:
 	LastData(int size);
 	~LastData();
 	char * getPackage(int * sizePackage);
-	usefulInfo * I;
+
 private:
 	char * Package;
 	int size;
@@ -84,7 +84,7 @@ public:
 	Ack(int size);
 	~Ack();
 	char * getPackage(int * sizePackage);
-	usefulInfo * I;
+
 private:
 	char * Package;
 	int size;
@@ -96,7 +96,7 @@ public:
 	LastAck(int size);
 	~LastAck();
 	char * getPackage(int * sizePackage);
-	usefulInfo * I;
+
 private:
 	char * Package;
 	int size;
@@ -114,7 +114,7 @@ public:
 	Error(int size);
 	~Error();
 	char * getPackage(int * sizePackage);
-	usefulInfo * I;
+
 private:
 	char * Package;
 	int size;

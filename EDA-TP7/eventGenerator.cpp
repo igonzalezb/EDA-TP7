@@ -1,16 +1,34 @@
 #include "eventGenerator.h"
-
-eventGenerator::eventGenerator(usefulInfo * I, evNetworking * Net)
+#include "TPTF_Events.h"
+eventGenerator::eventGenerator(usefulInfo * I)
 {
 	this->I = I;
-	this->Net = Net;
+	
 }
 
 
 void eventGenerator::generateEvents()
 {
 	GenericEvent * ev = NULL;
-	if ((ev = (Net->hayEvento())) != NULL)
+	if ((ev = (I->Net->hayEvento())) != NULL)
+	{
+		
+		if ((I->isLastAck == true) && (ev->getType() == ACK))
+		{
+			delete ev;
+			ev = new LastAck(2);
+		}
+		ev->UInfo = (void *)I;
+		I->buff.push_back(ev);
+		I->Tout.ResetTimer();
+	}
+
+	if ((ev = I->Tout.HayEvento()) != NULL)
+	{
+		I->buff.push_back(ev);
+	}
+
+	if (((ev = I->Kboard.Input()) != NULL))
 	{
 		I->buff.push_back(ev);
 	}

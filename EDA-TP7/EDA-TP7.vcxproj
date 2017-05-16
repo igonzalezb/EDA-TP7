@@ -146,8 +146,8 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="cliente.cpp" />
-    <ClCompile Include="ClientStates.cpp" />
     <ClCompile Include="eventGenerator.cpp" />
+    <ClCompile Include="evKeyboard.cpp" />
     <ClCompile Include="evNetworking.cpp" />
     <ClCompile Include="FileManager.cpp" />
     <ClCompile Include="GenericEvent.cpp" />
@@ -156,14 +156,15 @@
     <ClCompile Include="PackageMaker.cpp" />
     <ClCompile Include="ServerStates.cpp" />
     <ClCompile Include="servidor.cpp" />
+    <ClCompile Include="timeOut.cpp" />
     <ClCompile Include="TPTF_Events.cpp" />
     <ClCompile Include="TPTF_FSM.cpp" />
     <ClCompile Include="usefulinfo.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="cliente.h" />
-    <ClInclude Include="ClientStates.h" />
     <ClInclude Include="eventGenerator.h" />
+    <ClInclude Include="evKeyboard.h" />
     <ClInclude Include="evNetworking.h" />
     <ClInclude Include="FileManager.h" />
     <ClInclude Include="GenericEvent.h" />
@@ -172,6 +173,7 @@
     <ClInclude Include="PackageMaker.h" />
     <ClInclude Include="ServerStates.h" />
     <ClInclude Include="servidor.h" />
+    <ClInclude Include="timeOut.h" />
     <ClInclude Include="TPTF_Events.h" />
     <ClInclude Include="TPTF_FSM.h" />
     <ClInclude Include="usefulinfo.h" />
@@ -220,7 +222,6 @@
     <Import Project="..\..\..\Packages\boost-vc140.1.64.0.0\build\native\boost-vc140.targets" Condition="Exists('..\..\..\Packages\boost-vc140.1.64.0.0\build\native\boost-vc140.targets')" />
     <Import Project="..\..\..\Packages\pdcurses_vc120.3.4.0.3\build\native\pdcurses_vc120.targets" Condition="Exists('..\..\..\Packages\pdcurses_vc120.3.4.0.3\build\native\pdcurses_vc120.targets')" />
     <Import Project="..\..\..\Packages\PDCurses34.redist.3.4.0.1\build\native\PDCurses34.redist.targets" Condition="Exists('..\..\..\Packages\PDCurses34.redist.3.4.0.1\build\native\PDCurses34.redist.targets')" />
-    <Import Project="..\..\..\Packages\PDCurses34.3.4.0.1\build\native\PDCurses34.targets" Condition="Exists('..\..\..\Packages\PDCurses34.3.4.0.1\build\native\PDCurses34.targets')" />
   </ImportGroup>
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
@@ -268,6 +269,5 @@
     <Error Condition="!Exists('..\..\..\Packages\boost-vc140.1.64.0.0\build\native\boost-vc140.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\..\Packages\boost-vc140.1.64.0.0\build\native\boost-vc140.targets'))" />
     <Error Condition="!Exists('..\..\..\Packages\pdcurses_vc120.3.4.0.3\build\native\pdcurses_vc120.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\..\Packages\pdcurses_vc120.3.4.0.3\build\native\pdcurses_vc120.targets'))" />
     <Error Condition="!Exists('..\..\..\Packages\PDCurses34.redist.3.4.0.1\build\native\PDCurses34.redist.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\..\Packages\PDCurses34.redist.3.4.0.1\build\native\PDCurses34.redist.targets'))" />
-    <Error Condition="!Exists('..\..\..\Packages\PDCurses34.3.4.0.1\build\native\PDCurses34.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\..\Packages\PDCurses34.3.4.0.1\build\native\PDCurses34.targets'))" />
   </Target>
 </Project>

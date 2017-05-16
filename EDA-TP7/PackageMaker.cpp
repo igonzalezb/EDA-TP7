@@ -1,6 +1,11 @@
 #include "PackageMaker.h"
 
-bool PackageMaker::makeDATA (char* Package, char* data, unsigned int sizeData, unsigned int& sizePacket)
+
+enum events { RRQ = 1, WRQ, DATA, ACK, _ERROR };
+
+#define PackageSize  600
+
+bool PackageMaker::makeDATA(char* Package, char* data, unsigned int sizeData, unsigned int& sizePacket)
 {
 
 	Package[0] = 0x00;
@@ -10,7 +15,7 @@ bool PackageMaker::makeDATA (char* Package, char* data, unsigned int sizeData, u
 	Package[3] = (BlockNumber & 0x00ff);
 
 
-	for (unsigned int i = 4,j=0; j <= sizeData; j++,i++)
+	for (unsigned int i = 4, j = 0; j <= sizeData; j++, i++)
 	{
 		Package[i] = data[j];
 	}
@@ -22,7 +27,7 @@ bool PackageMaker::makeDATA (char* Package, char* data, unsigned int sizeData, u
 	return true;
 }
 
-bool PackageMaker::decodeDATA(char* DATA,char* DATApackage, unsigned int sizeDATApackage, unsigned int& sizeDATA)
+bool PackageMaker::decodeDATA(char* DATA, char* DATApackage, unsigned int sizeDATApackage, unsigned int& sizeDATA)
 {
 	int j = 0;
 
@@ -36,15 +41,16 @@ bool PackageMaker::decodeDATA(char* DATA,char* DATApackage, unsigned int sizeDAT
 	return true;
 }
 
-bool PackageMaker::makeRRQ(char * Package,char* NombreTXT, unsigned int& sizePackage)
+bool PackageMaker::makeRRQ(char * Package, char* NombreTXT, unsigned int& sizePackage)
 {
 	Package[0] = 0x00;
 	Package[1] = 0x01;
 
 	int NameTXTsize = sprintf(&Package[2], "%s", NombreTXT);
-	int ModeSize = sprintf(&Package[NameTXTsize + 2], "octet");
+	Package[NameTXTsize + 2] = '\0';
+	int ModeSize = sprintf(&Package[NameTXTsize + 3], "octet");
 
-	sizePackage = 2 + NameTXTsize + ModeSize;
+	sizePackage = 3 + NameTXTsize + ModeSize;
 
 	return true;
 }
@@ -56,9 +62,10 @@ bool PackageMaker::makeWRQ(char * Package, char* NombreTXT, unsigned int& sizePa
 	Package[1] = 0x02;
 
 	int NameTXTsize = sprintf(&Package[2], "%s", NombreTXT);
-	int ModeSize = sprintf(&Package[NameTXTsize + 2], "octet");
+	Package[NameTXTsize + 2] = '\0';
+	int ModeSize = sprintf(&Package[NameTXTsize + 3], "octet");
 
-	sizePackage = 2 + NameTXTsize + ModeSize;
+	sizePackage = 3 + NameTXTsize + ModeSize;
 
 	return true;
 }
@@ -74,7 +81,7 @@ int PackageMaker::getBlockNumber()
 }
 
 void PackageMaker::incBlockNumber()
-{ 
+{
 	BlockNumber++;
 }
 
@@ -87,20 +94,21 @@ typePacket PackageMaker::getTypePackage(char * Package, unsigned int sizePackage
 
 	switch (type)
 	{
-		case _DATA_:
-			type = _DATA_;
-			if (sizeDATA < 512)
-			{
-				type = _LASTDATA_;
-			}
-			break;
-		case _RRQ_:_WRQ_:_DATA_:_ACK_:_ERROR_:
-			return type;
-			break;
+	case _DATA_:
+		type = _DATA_;
+		if (sizeDATA < 512)
+		{
+			type = _LASTDATA_;
+		}
+		break;
+	case _RRQ_:_WRQ_:_DATA_:_ACK_:_ERROR_:
+		return type;
+		break;
 	}
 
 	return type;
 }
+
 
 PackageMaker::PackageMaker()
 {
@@ -112,8 +120,8 @@ bool PackageMaker::makeACK(char* Package, unsigned int& sizePackage)
 	Package[0] = 0x00;
 	Package[1] = 0x04;
 
-	Package[2] = (getBlockNumber() & 0xff00) >> 8;
-	Package[3] = (getBlockNumber() & 0x00ff);
+	Package[2] = (BlockNumber & 0xff00) >> 8;
+	Package[3] = (BlockNumber & 0x00ff);
 
 	incBlockNumber();
 

@@ -28,6 +28,7 @@ public:	//reaction routines por default para cada evento
     virtual GenericState* onTimeout(GenericEvent * ev) {return NULL;};
     virtual GenericState* onError (GenericEvent * ev) {return NULL;};
     virtual GenericState* onExit (GenericEvent * ev) {return NULL;};
+	
 
 };
 
