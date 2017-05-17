@@ -1,0 +1,279 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{8E5DD5A3-D308-4C15-B635-46C333F76499}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>Client</RootNamespace>
+    <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+    <Linkage-pdcurses>dynamic</Linkage-pdcurses>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <LinkIncremental>true</LinkIncremental>
+    <Linkage-pdcurses>dynamic</Linkage-pdcurses>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+    <Linkage-pdcurses>dynamic</Linkage-pdcurses>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <LinkIncremental>false</LinkIncremental>
+    <Linkage-pdcurses>dynamic</Linkage-pdcurses>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="cliente.cpp" />
+    <ClCompile Include="ClientStates.cpp" />
+    <ClCompile Include="eventGenerator.cpp" />
+    <ClCompile Include="evKeyboard.cpp" />
+    <ClCompile Include="evNetworking.cpp" />
+    <ClCompile Include="FileManager.cpp" />
+    <ClCompile Include="GenericEvent.cpp" />
+    <ClCompile Include="GenericState.cpp" />
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="PackageMaker.cpp" />
+    <ClCompile Include="servidor.cpp" />
+    <ClCompile Include="timeOut.cpp" />
+    <ClCompile Include="TPTF_Events.cpp" />
+    <ClCompile Include="TPTF_FSM.cpp" />
+    <ClCompile Include="usefulinfo.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="cliente.h" />
+    <ClInclude Include="ClientStates.h" />
+    <ClInclude Include="eventGenerator.h" />
+    <ClInclude Include="evKeyboard.h" />
+    <ClInclude Include="evNetworking.h" />
+    <ClInclude Include="FIleManager.h" />
+    <ClInclude Include="GenericEvent.h" />
+    <ClInclude Include="GenericFSM.h" />
+    <ClInclude Include="GenericState.h" />
+    <ClInclude Include="PackageMaker.h" />
+    <ClInclude Include="servidor.h" />
+    <ClInclude Include="timeOut.h" />
+    <ClInclude Include="TPTF_Events.h" />
+    <ClInclude Include="TPTF_FSM.h" />
+    <ClInclude Include="usefulinfo.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+    <Import Project="..\..\..\Packages\boost.1.64.0.0\build\native\boost.targets" Condition="Exists('..\..\..\Packages\boost.1.64.0.0\build\native\boost.targets')" />
+    <Import Project="..\..\..\Packages\boost_atomic-vc140.1.64.0.0\build\native\boost_atomic-vc140.targets" Condition="Exists('..\..\..\Packages\boost_atomic-vc140.1.64.0.0\build\native\boost_atomic-vc140.targets')" />
+    <Import Project="..\..\..\Packages\boost_bzip2-vc140.1.64.0.0\build\native\boost_bzip2-vc140.targets" Condition="Exists('..\..\..\Packages\boost_bzip2-vc140.1.64.0.0\build\native\boost_bzip2-vc140.targets')" />
+    <Import Project="..\..\..\Packages\boost_chrono-vc140.1.64.0.0\build\native\boost_chrono-vc140.targets" Condition="Exists('..\..\..\Packages\boost_chrono-vc140.1.64.0.0\build\native\boost_chrono-vc140.targets')" />
+    <Import Project="..\..\..\Packages\boost_container-vc140.1.64.0.0\build\native\boost_container-vc140.targets" Condition="Exists('..\..\..\Packages\boost_container-vc140.1.64.0.0\build\native\boost_container-vc140.targets')" />
+    <Import Project="..\..\..\Packages\boost_context-vc140.1.64.0.0\build\native\boost_context-vc140.targets" Condition="Exists('..\..\..\Packages\boost_context-vc140.1.64.0.0\build\native\boost_context-vc140.targets')" />
+    <Import Project="..\..\..\Packages\boost_coroutine-vc140.1.64.0.0\build\native\boost_coroutine-vc140.targets" Condition="Exists('..\..\..\Packages\boost_coroutine-vc140.1.64.0.0\build\native\boost_coroutine-vc140.targets')" />
+    <Import Project="..\..\..\Packages\boost_date_time-vc140.1.64.0.0\build\native\boost_date_time-vc140.targets" Condition="Exists('..\..\..\Packages\boost_date_time-vc140.1.64.0.0\build\native\boost_date_time-vc140.targets')" />
+    <Import Project="..\..\..\Packages\boost_exception-vc140.1.64.0.0\build\native\boost_exception-vc140.targets" Condition="Exists('..\..\..\Packages\boost_exception-vc140.1.64.0.0\build\native\boost_exception-vc140.targets')" />
+    <Import Project="..\..\..\Packages\boost_fiber-vc140.1.64.0.0\build\native\boost_fiber-vc140.targets" Condition="Exists('..\..\..\Packages\boost_fiber-vc140.1.64.0.0\build\native\boost_fiber-vc140.targets')" />
+    <Import Project="..\..\..\Packages\boost_filesystem-vc140.1.64.0.0\build\native\boost_filesystem-vc140.targets" Condition="Exists('..\..\..\Packages\boost_filesystem-vc140.1.64.0.0\build\native\boost_filesystem-vc140.targets')" />
+    <Import Project="..\..\..\Packages\boost_graph-vc140.1.64.0.0\build\native\boost_graph-vc140.targets" Condition="Exists('..\..\..\Packages\boost_graph-vc140.1.64.0.0\build\native\boost_graph-vc140.targets')" />
+    <Import Project="..\..\..\Packages\boost_iostreams-vc140.1.64.0.0\build\native\boost_iostreams-vc140.targets" Condition="Exists('..\..\..\Packages\boost_iostreams-vc140.1.64.0.0\build\native\boost_iostreams-vc140.targets')" />
+    <Import Project="..\..\..\Packages\boost_locale-vc140.1.64.0.0\build\native\boost_locale-vc140.targets" Condition="Exists('..\..\..\Packages\boost_locale-vc140.1.64.0.0\build\native\boost_locale-vc140.targets')" />
+    <Import Project="..\..\..\Packages\boost_log-vc140.1.64.0.0\build\native\boost_log-vc140.targets" Condition="Exists('..\..\..\Packages\boost_log-vc140.1.64.0.0\build\native\boost_log-vc140.targets')" />
+    <Import Project="..\..\..\Packages\boost_log_setup-vc140.1.64.0.0\build\native\boost_log_setup-vc140.targets" Condition="Exists('..\..\..\Packages\boost_log_setup-vc140.1.64.0.0\build\native\boost_log_setup-vc140.targets')" />
+    <Import Project="..\..\..\Packages\boost_math_c99-vc140.1.64.0.0\build\native\boost_math_c99-vc140.targets" Condition="Exists('..\..\..\Packages\boost_math_c99-vc140.1.64.0.0\build\native\boost_math_c99-vc140.targets')" />
+    <Import Project="..\..\..\Packages\boost_math_c99f-vc140.1.64.0.0\build\native\boost_math_c99f-vc140.targets" Condition="Exists('..\..\..\Packages\boost_math_c99f-vc140.1.64.0.0\build\native\boost_math_c99f-vc140.targets')" />
+    <Import Project="..\..\..\Packages\boost_math_c99l-vc140.1.64.0.0\build\native\boost_math_c99l-vc140.targets" Condition="Exists('..\..\..\Packages\boost_math_c99l-vc140.1.64.0.0\build\native\boost_math_c99l-vc140.targets')" />
+    <Import Project="..\..\..\Packages\boost_math_tr1-vc140.1.64.0.0\build\native\boost_math_tr1-vc140.targets" Condition="Exists('..\..\..\Packages\boost_math_tr1-vc140.1.64.0.0\build\native\boost_math_tr1-vc140.targets')" />
+    <Import Project="..\..\..\Packages\boost_math_tr1f-vc140.1.64.0.0\build\native\boost_math_tr1f-vc140.targets" Condition="Exists('..\..\..\Packages\boost_math_tr1f-vc140.1.64.0.0\build\native\boost_math_tr1f-vc140.targets')" />
+    <Import Project="..\..\..\Packages\boost_math_tr1l-vc140.1.64.0.0\build\native\boost_math_tr1l-vc140.targets" Condition="Exists('..\..\..\Packages\boost_math_tr1l-vc140.1.64.0.0\build\native\boost_math_tr1l-vc140.targets')" />
+    <Import Project="..\..\..\Packages\boost_prg_exec_monitor-vc140.1.64.0.0\build\native\boost_prg_exec_monitor-vc140.targets" Condition="Exists('..\..\..\Packages\boost_prg_exec_monitor-vc140.1.64.0.0\build\native\boost_prg_exec_monitor-vc140.targets')" />
+    <Import Project="..\..\..\Packages\boost_program_options-vc140.1.64.0.0\build\native\boost_program_options-vc140.targets" Condition="Exists('..\..\..\Packages\boost_program_options-vc140.1.64.0.0\build\native\boost_program_options-vc140.targets')" />
+    <Import Project="..\..\..\Packages\boost_python-vc140.1.64.0.0\build\native\boost_python-vc140.targets" Condition="Exists('..\..\..\Packages\boost_python-vc140.1.64.0.0\build\native\boost_python-vc140.targets')" />
+    <Import Project="..\..\..\Packages\boost_python3-vc140.1.64.0.0\build\native\boost_python3-vc140.targets" Condition="Exists('..\..\..\Packages\boost_python3-vc140.1.64.0.0\build\native\boost_python3-vc140.targets')" />
+    <Import Project="..\..\..\Packages\boost_random-vc140.1.64.0.0\build\native\boost_random-vc140.targets" Condition="Exists('..\..\..\Packages\boost_random-vc140.1.64.0.0\build\native\boost_random-vc140.targets')" />
+    <Import Project="..\..\..\Packages\boost_regex-vc140.1.64.0.0\build\native\boost_regex-vc140.targets" Condition="Exists('..\..\..\Packages\boost_regex-vc140.1.64.0.0\build\native\boost_regex-vc140.targets')" />
+    <Import Project="..\..\..\Packages\boost_serialization-vc140.1.64.0.0\build\native\boost_serialization-vc140.targets" Condition="Exists('..\..\..\Packages\boost_serialization-vc140.1.64.0.0\build\native\boost_serialization-vc140.targets')" />
+    <Import Project="..\..\..\Packages\boost_signals-vc140.1.64.0.0\build\native\boost_signals-vc140.targets" Condition="Exists('..\..\..\Packages\boost_signals-vc140.1.64.0.0\build\native\boost_signals-vc140.targets')" />
+    <Import Project="..\..\..\Packages\boost_system-vc140.1.64.0.0\build\native\boost_system-vc140.targets" Condition="Exists('..\..\..\Packages\boost_system-vc140.1.64.0.0\build\native\boost_system-vc140.targets')" />
+    <Import Project="..\..\..\Packages\boost_test_exec_monitor-vc140.1.64.0.0\build\native\boost_test_exec_monitor-vc140.targets" Condition="Exists('..\..\..\Packages\boost_test_exec_monitor-vc140.1.64.0.0\build\native\boost_test_exec_monitor-vc140.targets')" />
+    <Import Project="..\..\..\Packages\boost_thread-vc140.1.64.0.0\build\native\boost_thread-vc140.targets" Condition="Exists('..\..\..\Packages\boost_thread-vc140.1.64.0.0\build\native\boost_thread-vc140.targets')" />
+    <Import Project="..\..\..\Packages\boost_timer-vc140.1.64.0.0\build\native\boost_timer-vc140.targets" Condition="Exists('..\..\..\Packages\boost_timer-vc140.1.64.0.0\build\native\boost_timer-vc140.targets')" />
+    <Import Project="..\..\..\Packages\boost_type_erasure-vc140.1.64.0.0\build\native\boost_type_erasure-vc140.targets" Condition="Exists('..\..\..\Packages\boost_type_erasure-vc140.1.64.0.0\build\native\boost_type_erasure-vc140.targets')" />
+    <Import Project="..\..\..\Packages\boost_unit_test_framework-vc140.1.64.0.0\build\native\boost_unit_test_framework-vc140.targets" Condition="Exists('..\..\..\Packages\boost_unit_test_framework-vc140.1.64.0.0\build\native\boost_unit_test_framework-vc140.targets')" />
+    <Import Project="..\..\..\Packages\boost_wave-vc140.1.64.0.0\build\native\boost_wave-vc140.targets" Condition="Exists('..\..\..\Packages\boost_wave-vc140.1.64.0.0\build\native\boost_wave-vc140.targets')" />
+    <Import Project="..\..\..\Packages\boost_wserialization-vc140.1.64.0.0\build\native\boost_wserialization-vc140.targets" Condition="Exists('..\..\..\Packages\boost_wserialization-vc140.1.64.0.0\build\native\boost_wserialization-vc140.targets')" />
+    <Import Project="..\..\..\Packages\boost_zlib-vc140.1.64.0.0\build\native\boost_zlib-vc140.targets" Condition="Exists('..\..\..\Packages\boost_zlib-vc140.1.64.0.0\build\native\boost_zlib-vc140.targets')" />
+    <Import Project="..\..\..\Packages\boost-vc140.1.64.0.0\build\native\boost-vc140.targets" Condition="Exists('..\..\..\Packages\boost-vc140.1.64.0.0\build\native\boost-vc140.targets')" />
+    <Import Project="..\..\..\Packages\pdcurses_vc120.3.4.0.3\build\native\pdcurses_vc120.targets" Condition="Exists('..\..\..\Packages\pdcurses_vc120.3.4.0.3\build\native\pdcurses_vc120.targets')" />
+    <Import Project="..\..\..\Packages\PDCurses34.redist.3.4.0.1\build\native\PDCurses34.redist.targets" Condition="Exists('..\..\..\Packages\PDCurses34.redist.3.4.0.1\build\native\PDCurses34.redist.targets')" />
+    <Import Project="..\..\..\Packages\PDCurses34.3.4.0.1\build\native\PDCurses34.targets" Condition="Exists('..\..\..\Packages\PDCurses34.3.4.0.1\build\native\PDCurses34.targets')" />
+  </ImportGroup>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\..\..\Packages\boost.1.64.0.0\build\native\boost.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\..\Packages\boost.1.64.0.0\build\native\boost.targets'))" />
+    <Error Condition="!Exists('..\..\..\Packages\boost_atomic-vc140.1.64.0.0\build\native\boost_atomic-vc140.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\..\Packages\boost_atomic-vc140.1.64.0.0\build\native\boost_atomic-vc140.targets'))" />
+    <Error Condition="!Exists('..\..\..\Packages\boost_bzip2-vc140.1.64.0.0\build\native\boost_bzip2-vc140.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\..\Packages\boost_bzip2-vc140.1.64.0.0\build\native\boost_bzip2-vc140.targets'))" />
+    <Error Condition="!Exists('..\..\..\Packages\boost_chrono-vc140.1.64.0.0\build\native\boost_chrono-vc140.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\..\Packages\boost_chrono-vc140.1.64.0.0\build\native\boost_chrono-vc140.targets'))" />
+    <Error Condition="!Exists('..\..\..\Packages\boost_container-vc140.1.64.0.0\build\native\boost_container-vc140.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\..\Packages\boost_container-vc140.1.64.0.0\build\native\boost_container-vc140.targets'))" />
+    <Error Condition="!Exists('..\..\..\Packages\boost_context-vc140.1.64.0.0\build\native\boost_context-vc140.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\..\Packages\boost_context-vc140.1.64.0.0\build\native\boost_context-vc140.targets'))" />
+    <Error Condition="!Exists('..\..\..\Packages\boost_coroutine-vc140.1.64.0.0\build\native\boost_coroutine-vc140.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\..\Packages\boost_coroutine-vc140.1.64.0.0\build\native\boost_coroutine-vc140.targets'))" />
+    <Error Condition="!Exists('..\..\..\Packages\boost_date_time-vc140.1.64.0.0\build\native\boost_date_time-vc140.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\..\Packages\boost_date_time-vc140.1.64.0.0\build\native\boost_date_time-vc140.targets'))" />
+    <Error Condition="!Exists('..\..\..\Packages\boost_exception-vc140.1.64.0.0\build\native\boost_exception-vc140.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\..\Packages\boost_exception-vc140.1.64.0.0\build\native\boost_exception-vc140.targets'))" />
+    <Error Condition="!Exists('..\..\..\Packages\boost_fiber-vc140.1.64.0.0\build\native\boost_fiber-vc140.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\..\Packages\boost_fiber-vc140.1.64.0.0\build\native\boost_fiber-vc140.targets'))" />
+    <Error Condition="!Exists('..\..\..\Packages\boost_filesystem-vc140.1.64.0.0\build\native\boost_filesystem-vc140.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\..\Packages\boost_filesystem-vc140.1.64.0.0\build\native\boost_filesystem-vc140.targets'))" />
+    <Error Condition="!Exists('..\..\..\Packages\boost_graph-vc140.1.64.0.0\build\native\boost_graph-vc140.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\..\Packages\boost_graph-vc140.1.64.0.0\build\native\boost_graph-vc140.targets'))" />
+    <Error Condition="!Exists('..\..\..\Packages\boost_iostreams-vc140.1.64.0.0\build\native\boost_iostreams-vc140.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\..\Packages\boost_iostreams-vc140.1.64.0.0\build\native\boost_iostreams-vc140.targets'))" />
+    <Error Condition="!Exists('..\..\..\Packages\boost_locale-vc140.1.64.0.0\build\native\boost_locale-vc140.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\..\Packages\boost_locale-vc140.1.64.0.0\build\native\boost_locale-vc140.targets'))" />
+    <Error Condition="!Exists('..\..\..\Packages\boost_log-vc140.1.64.0.0\build\native\boost_log-vc140.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\..\Packages\boost_log-vc140.1.64.0.0\build\native\boost_log-vc140.targets'))" />
+    <Error Condition="!Exists('..\..\..\Packages\boost_log_setup-vc140.1.64.0.0\build\native\boost_log_setup-vc140.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\..\Packages\boost_log_setup-vc140.1.64.0.0\build\native\boost_log_setup-vc140.targets'))" />
+    <Error Condition="!Exists('..\..\..\Packages\boost_math_c99-vc140.1.64.0.0\build\native\boost_math_c99-vc140.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\..\Packages\boost_math_c99-vc140.1.64.0.0\build\native\boost_math_c99-vc140.targets'))" />
+    <Error Condition="!Exists('..\..\..\Packages\boost_math_c99f-vc140.1.64.0.0\build\native\boost_math_c99f-vc140.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\..\Packages\boost_math_c99f-vc140.1.64.0.0\build\native\boost_math_c99f-vc140.targets'))" />
+    <Error Condition="!Exists('..\..\..\Packages\boost_math_c99l-vc140.1.64.0.0\build\native\boost_math_c99l-vc140.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\..\Packages\boost_math_c99l-vc140.1.64.0.0\build\native\boost_math_c99l-vc140.targets'))" />
+    <Error Condition="!Exists('..\..\..\Packages\boost_math_tr1-vc140.1.64.0.0\build\native\boost_math_tr1-vc140.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\..\Packages\boost_math_tr1-vc140.1.64.0.0\build\native\boost_math_tr1-vc140.targets'))" />
+    <Error Condition="!Exists('..\..\..\Packages\boost_math_tr1f-vc140.1.64.0.0\build\native\boost_math_tr1f-vc140.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\..\Packages\boost_math_tr1f-vc140.1.64.0.0\build\native\boost_math_tr1f-vc140.targets'))" />
+    <Error Condition="!Exists('..\..\..\Packages\boost_math_tr1l-vc140.1.64.0.0\build\native\boost_math_tr1l-vc140.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\..\Packages\boost_math_tr1l-vc140.1.64.0.0\build\native\boost_math_tr1l-vc140.targets'))" />
+    <Error Condition="!Exists('..\..\..\Packages\boost_prg_exec_monitor-vc140.1.64.0.0\build\native\boost_prg_exec_monitor-vc140.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\..\Packages\boost_prg_exec_monitor-vc140.1.64.0.0\build\native\boost_prg_exec_monitor-vc140.targets'))" />
+    <Error Condition="!Exists('..\..\..\Packages\boost_program_options-vc140.1.64.0.0\build\native\boost_program_options-vc140.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\..\Packages\boost_program_options-vc140.1.64.0.0\build\native\boost_program_options-vc140.targets'))" />
+    <Error Condition="!Exists('..\..\..\Packages\boost_python-vc140.1.64.0.0\build\native\boost_python-vc140.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\..\Packages\boost_python-vc140.1.64.0.0\build\native\boost_python-vc140.targets'))" />
+    <Error Condition="!Exists('..\..\..\Packages\boost_python3-vc140.1.64.0.0\build\native\boost_python3-vc140.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\..\Packages\boost_python3-vc140.1.64.0.0\build\native\boost_python3-vc140.targets'))" />
+    <Error Condition="!Exists('..\..\..\Packages\boost_random-vc140.1.64.0.0\build\native\boost_random-vc140.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\..\Packages\boost_random-vc140.1.64.0.0\build\native\boost_random-vc140.targets'))" />
+    <Error Condition="!Exists('..\..\..\Packages\boost_regex-vc140.1.64.0.0\build\native\boost_regex-vc140.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\..\Packages\boost_regex-vc140.1.64.0.0\build\native\boost_regex-vc140.targets'))" />
+    <Error Condition="!Exists('..\..\..\Packages\boost_serialization-vc140.1.64.0.0\build\native\boost_serialization-vc140.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\..\Packages\boost_serialization-vc140.1.64.0.0\build\native\boost_serialization-vc140.targets'))" />
+    <Error Condition="!Exists('..\..\..\Packages\boost_signals-vc140.1.64.0.0\build\native\boost_signals-vc140.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\..\Packages\boost_signals-vc140.1.64.0.0\build\native\boost_signals-vc140.targets'))" />
+    <Error Condition="!Exists('..\..\..\Packages\boost_system-vc140.1.64.0.0\build\native\boost_system-vc140.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\..\Packages\boost_system-vc140.1.64.0.0\build\native\boost_system-vc140.targets'))" />
+    <Error Condition="!Exists('..\..\..\Packages\boost_test_exec_monitor-vc140.1.64.0.0\build\native\boost_test_exec_monitor-vc140.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\..\Packages\boost_test_exec_monitor-vc140.1.64.0.0\build\native\boost_test_exec_monitor-vc140.targets'))" />
+    <Error Condition="!Exists('..\..\..\Packages\boost_thread-vc140.1.64.0.0\build\native\boost_thread-vc140.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\..\Packages\boost_thread-vc140.1.64.0.0\build\native\boost_thread-vc140.targets'))" />
+    <Error Condition="!Exists('..\..\..\Packages\boost_timer-vc140.1.64.0.0\build\native\boost_timer-vc140.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\..\Packages\boost_timer-vc140.1.64.0.0\build\native\boost_timer-vc140.targets'))" />
+    <Error Condition="!Exists('..\..\..\Packages\boost_type_erasure-vc140.1.64.0.0\build\native\boost_type_erasure-vc140.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\..\Packages\boost_type_erasure-vc140.1.64.0.0\build\native\boost_type_erasure-vc140.targets'))" />
+    <Error Condition="!Exists('..\..\..\Packages\boost_unit_test_framework-vc140.1.64.0.0\build\native\boost_unit_test_framework-vc140.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\..\Packages\boost_unit_test_framework-vc140.1.64.0.0\build\native\boost_unit_test_framework-vc140.targets'))" />
+    <Error Condition="!Exists('..\..\..\Packages\boost_wave-vc140.1.64.0.0\build\native\boost_wave-vc140.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\..\Packages\boost_wave-vc140.1.64.0.0\build\native\boost_wave-vc140.targets'))" />
+    <Error Condition="!Exists('..\..\..\Packages\boost_wserialization-vc140.1.64.0.0\build\native\boost_wserialization-vc140.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\..\Packages\boost_wserialization-vc140.1.64.0.0\build\native\boost_wserialization-vc140.targets'))" />
+    <Error Condition="!Exists('..\..\..\Packages\boost_zlib-vc140.1.64.0.0\build\native\boost_zlib-vc140.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\..\Packages\boost_zlib-vc140.1.64.0.0\build\native\boost_zlib-vc140.targets'))" />
+    <Error Condition="!Exists('..\..\..\Packages\boost-vc140.1.64.0.0\build\native\boost-vc140.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\..\Packages\boost-vc140.1.64.0.0\build\native\boost-vc140.targets'))" />
+    <Error Condition="!Exists('..\..\..\Packages\pdcurses_vc120.3.4.0.3\build\native\pdcurses_vc120.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\..\Packages\pdcurses_vc120.3.4.0.3\build\native\pdcurses_vc120.targets'))" />
+    <Error Condition="!Exists('..\..\..\Packages\PDCurses34.redist.3.4.0.1\build\native\PDCurses34.redist.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\..\Packages\PDCurses34.redist.3.4.0.1\build\native\PDCurses34.redist.targets'))" />
+    <Error Condition="!Exists('..\..\..\Packages\PDCurses34.3.4.0.1\build\native\PDCurses34.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\..\Packages\PDCurses34.3.4.0.1\build\native\PDCurses34.targets'))" />
+  </Target>
+</Project>
