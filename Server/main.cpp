@@ -44,7 +44,8 @@ int main(int argc, char *argv[])
 #if I_AM == CLIENT	
 	char buff[600];
 	char comando[600];
-	char path[700];
+	char path[600];
+	char folder[700] = { "Download\\" };
 	unsigned int sizePackage = 0;
 
 	
@@ -60,6 +61,8 @@ int main(int argc, char *argv[])
 	{
 		scanf("%s", comando);//espero a que se ingrese wrq o rrq
 		scanf("%s", path);//espero que se ingrese el path del archivo
+
+
 		for (int i = 0; i < strlen(comando); i++)//paso el comando amayusculas
 			comando[i] = toupper(comando[i]);
 	} while ((strcmp(comando, "PUT") != 0) && (strcmp(comando, "GET") != 0));
@@ -68,20 +71,22 @@ int main(int argc, char *argv[])
 	evNetworking Net(&Client);
 	usefulInfo Info(&Net);
 
+	strcat(folder, path);
+
 	if (!strcmp(comando, "PUT"))
 	{
 		//abro archivo en modo LECTURA
-		Info.File = new DataPacket(path, true);
+		Info.File = new DataPacket(folder, true);
 		//armo el paquete WRQ
-		Info.makerDecoder.makeWRQ(buff, path, sizePackage);
+		Info.makerDecoder.makeWRQ(buff, folder, sizePackage);
 		fsm = new TPTF_FSM(new Writing);
 	}
 	else
 	{
 		//abro archivo en modo escritura
-		Info.File = new DataPacket(path, false);
+		Info.File = new DataPacket(folder, false);
 		//armo el paquete RRQ
-		Info.makerDecoder.makeRRQ(buff, path, sizePackage);
+		Info.makerDecoder.makeRRQ(buff, folder, sizePackage);
 		fsm = new TPTF_FSM(new Reading);
 	}
 
