@@ -40,7 +40,7 @@ GenericEvent * KeyBoard::Input()
 				}
 				else
 				{
-					cout << "Vuelva a ingresar el comando\n" << endl;
+					//cout << "Vuelva a ingresar el comando\n" << endl;
 					ev = NULL;
 				}
 

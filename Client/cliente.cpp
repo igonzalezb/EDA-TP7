@@ -10,9 +10,14 @@ cliente::cliente()
 
 cliente::~cliente()
 {
-	delete ioCliente;
-	delete clienteSocket;
-	delete clienteResolver;
+	try{
+		clienteSocket->close();
+		delete clienteResolver;
+		delete clienteSocket;
+		delete ioCliente;
+	}
+	catch (const std::exception& e) { ; }
+	
 }
 
 //ConectToServer()

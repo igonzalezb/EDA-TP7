@@ -18,12 +18,14 @@ servidor::servidor(UINT32 port)
 
 servidor::~servidor()
 {
-	conectionServerAceptor->close();
-	ServerSocket->close();
-	delete conectionServerAceptor;
-	delete ServerSocket;
-	delete ioServer;
-	
+	try { 
+		conectionServerAceptor->close();
+		ServerSocket->close();
+		delete conectionServerAceptor;
+		delete ServerSocket;
+		delete ioServer;
+	}
+	catch (const std::exception& e) { ; }
 }
 
 //waitForCliente()

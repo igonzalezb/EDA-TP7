@@ -55,22 +55,32 @@ int main(int argc, char *argv[])
 	{
 		exit (4);
 	}
+	Client.ConectToServer(argv[1], "69");
 	
-	//inicializo el sistema de archivos
+	
 	do
 	{
+		printf("ENTER COMMAND:");
 		scanf("%s", comando);//espero a que se ingrese wrq o rrq
-		scanf("%s", path);//espero que se ingrese el path del archivo
-
-
 		for (int i = 0; i < strlen(comando); i++)//paso el comando amayusculas
 			comando[i] = toupper(comando[i]);
+		if (!(strcmp(comando, "HELP")))
+		{
+			cout << "Instrucciones de uso\n" << endl;
+			cout << "introduciendo PUT path, se envia al servidor el archivo que señalo en path" << endl;
+			cout << "introduciendo GET path, se recibe el archivo indicado en el path desde servidor hacia cliente" << endl;
+			cout << "introduciendo EXIT path, se termina la comunicacion" << endl;
+		}
+		else
+			scanf("%s", path);//espero que se ingrese el path del archivo
+		
+		
+
 	} while ((strcmp(comando, "PUT") != 0) && (strcmp(comando, "GET") != 0));
 	
-	Client.ConectToServer(argv[1], "69");
 	evNetworking Net(&Client);
 	usefulInfo Info(&Net);
-
+	//inicializo el sistema de archivos
 	strcat(folder, path);
 
 	if (!strcmp(comando, "PUT"))
@@ -81,7 +91,7 @@ int main(int argc, char *argv[])
 		Info.makerDecoder.makeWRQ(buff, folder, sizePackage);
 		fsm = new TPTF_FSM(new Writing);
 	}
-	else
+	else if (!strcmp(comando, "GET"))
 	{
 		//abro archivo en modo escritura
 		Info.File = new DataPacket(folder, false);
@@ -122,6 +132,7 @@ int main(int argc, char *argv[])
 	delete newEv;
 	delete fsm;
 	Net.~evNetworking();
+
 	return EXIT_SUCCESS;
 }
 

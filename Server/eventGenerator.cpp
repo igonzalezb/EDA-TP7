@@ -28,10 +28,12 @@ void eventGenerator::generateEvents()
 		I->buff.push_back(ev);
 	}
 
+#if I_AM == CLIENT
 	if (((ev = I->Kboard.Input()) != NULL))
 	{
 		I->buff.push_back(ev);
 	}
+#endif
 }
 
 GenericEvent * eventGenerator::getEvents()
