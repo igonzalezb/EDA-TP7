@@ -54,9 +54,7 @@ int main(int argc, char *argv[])
 	{
 		exit (4);
 	}
-	Client.ConectToServer(argv[1], "69");
-	evNetworking Net(&Client);
-	usefulInfo Info(&Net);
+	
 	//inicializo el sistema de archivos
 	do
 	{
@@ -64,8 +62,12 @@ int main(int argc, char *argv[])
 		scanf("%s", path);//espero que se ingrese el path del archivo
 		for (int i = 0; i < strlen(comando); i++)//paso el comando amayusculas
 			comando[i] = toupper(comando[i]);
-	} while (strcmp(comando, "PUT")|| strcmp(comando, "GET"));
+	} while ((strcmp(comando, "PUT") != 0) && (strcmp(comando, "GET") != 0));
 	
+	Client.ConectToServer(argv[1], "69");
+	evNetworking Net(&Client);
+	usefulInfo Info(&Net);
+
 	if (!strcmp(comando, "PUT"))
 	{
 		//abro archivo en modo LECTURA

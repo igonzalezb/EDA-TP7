@@ -32,9 +32,9 @@ GenericEvent * KeyBoard::Input()
 				else if (str2.compare(TeclasIngresadas) == 0) // case "HELP"
 				{
 					cout << "Instrucciones de uso\n" << endl;
-					cout << "introduciendo PUT path , se envia al servidor el archivo que señalo en path" << endl;
+					cout << "introduciendo PUT path, se envia al servidor el archivo que señalo en path" << endl;
 					cout << "introduciendo GET path, se recive el archivo indicado en el path desde servidor hacia cliente" << endl;
-					cout << "introduciendo EXIT path , se termina la comunicacion" << endl;
+					cout << "introduciendo EXIT path, se termina la comunicacion" << endl;
 					ev = NULL;
 
 				}
